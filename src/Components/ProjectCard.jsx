@@ -19,11 +19,11 @@ const useStyles = makeStyles((theme) => ({
     },
     rootSmall: {
         marginTop: theme.spacing(5),
-        maxWidth: 384,
+        maxWidth: 256,
     },
     mediaSmall: {
-        height: 216,
-        width: 384,
+        height: 144,
+        width: 256,
     },
     cardContent: {
     }
