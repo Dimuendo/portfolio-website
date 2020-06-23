@@ -6,7 +6,7 @@ import Box from '@material-ui/core/Box';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        backgroundColor: 'green',
+        backgroundColor: '#26c6da',
         display: 'flex',
         flexDirection: 'column',
         alignItems:'center',
@@ -26,11 +26,11 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function Intro() {
+function Intro(props) {
     const classes = useStyles()
 
     return (
-        <div className={classes.root}>
+        <div className={classes.root} ref={props.introRef}>
             <img src={profilePic} className={classes.profilePic} alt="logo" />
             <Box borderBottom={1} className={classes.nameContainer}>
                 <Typography variant="h3" className={classes.name}>

@@ -4,13 +4,13 @@ import ProjectCard from './ProjectCard'
 import Box from '@material-ui/core/Box';
 import { Typography } from '@material-ui/core';
 
-import tftcompsGIF from '../Static/tftcomps.gif'
-import pathfindingVisualizerGIF from '../Static/pathfinding_visualizer.gif'
-import sortingVisualizerGIF from '../Static/sorting_visualizer.gif'
+import tftcomps from '../Static/tftcomps.jpg'
+import pathfindingVisualizer from '../Static/pathfinding_visualizer.jpg'
+import sortingVisualizer from '../Static/sorting_visualizer.jpg'
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        backgroundColor: 'red',
+        backgroundColor: '#E1E2E1',
         display: 'flex',
         flexDirection: 'column',
         alignItems:'center',
@@ -35,11 +35,15 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function Projects() {
+const tftcompsMessage = 'This website aggregates the match data of the top 1000 players for the online video game Teamfight Tactics, it displays the most popular team compositions and statistics pertaining to items, units, and traits.'
+const pathfindingVisualizerMessage = 'This project allows the user to visualize different maze-generation and pathfinding algorithms.'
+const sortingVisualizerMessage = 'This project allows the user to visualize different sorting algorithms.'
+
+function Projects(props) {
     const classes = useStyles()
 
     return (
-        <div className={classes.root}>
+        <div className={classes.root} ref={props.projectsRef}>
             <Box borderBottom={1} className={classes.titleContainer}>
             <Typography variant="h3" className={classes.title}>
                 Projects
@@ -47,24 +51,24 @@ function Projects() {
             </Box>
             <ProjectCard 
                 projectTitle='tftcomps.lol' 
-                projectDescription='This project was created in ...'
+                projectDescription={tftcompsMessage}
                 websiteLink='https://tftcomps.lol/'
                 gitHubLink='https://github.com/Dimuendo/tftcomps'
-                media={tftcompsGIF}
+                media={tftcomps}
             />
             <ProjectCard 
                 projectTitle='Pathfinding Visualizer' 
-                projectDescription='soidfjiosdfidfjs soifjsdifjsdiofjsiofjdiofjsiodf'
+                projectDescription={pathfindingVisualizerMessage}
                 websiteLink='https://dimuendo.github.io/pathfinding-visualizer/'
                 gitHubLink='https://github.com/Dimuendo/pathfinding-visualizer'
-                media={pathfindingVisualizerGIF}
+                media={pathfindingVisualizer}
             />
             <ProjectCard 
                 projectTitle='Sorting Visualizer' 
-                projectDescription='soidfjiosdfidfjs soifjsdifjsdiofjsiofjdiofjsiodf'
+                projectDescription={sortingVisualizerMessage}
                 websiteLink='https://dimuendo.github.io/sorting-visualizer/'
                 gitHubLink='https://github.com/Dimuendo/sorting-visualizer'
-                media={sortingVisualizerGIF}
+                media={sortingVisualizer}
             />
         </div>
     );

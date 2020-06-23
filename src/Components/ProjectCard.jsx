@@ -11,17 +11,11 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 const useStyles = makeStyles((theme) => ({
     root: {
         marginTop: theme.spacing(5),
-        maxWidth: 500,
+        maxWidth: 640,
     },
     media: {
-        height: 281,
-        width: 500,
-    },
-    gitHubButton: {
-
-    },
-    cardActions: {
-        // display: 'flex',
+        height: 360,
+        width: 640,
     },
     cardContent: {
     }
@@ -53,7 +47,7 @@ function ProjectCard(props) {
                 <Button target='_blank' rel='noopener noreferrer' size='small' color='primary' href={websiteLink}>
                     Go to Website
                 </Button>
-                <IconButton edge='start' className={classes.gitHubButton} color='inherit' aria-label='GitHubIcon'>
+                <IconButton edge='start' className={classes.gitHubButton} color='inherit' aria-label='GitHubIcon' href={props.gitHubLink} target='_blank' rel='noopener noreferrer'>
                     <GitHubIcon></GitHubIcon>
                 </IconButton>
             </CardActions>
