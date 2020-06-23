@@ -14,15 +14,6 @@ const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
     },
-    buttonContainer: {
-        marginLeft: theme.spacing(3),
-    },
-    navTitleContainer: {
-        marginLeft: 'auto'
-    },
-    iconLabel: {
-        // marginLeft: theme.spacing(1),
-    },
     iconButton: {
         marginRight: theme.spacing(3)
     },
@@ -33,28 +24,32 @@ const useStyles = makeStyles((theme) => ({
 
 function InfoBar(props) {
     const classes = useStyles()
+    const screenWidth = window.innerWidth
 
     return (
-        <AppBar position='static' ref={props.infoBarRef}>
+        <AppBar position='static' ref={props.infoBarRef} className={classes.root}>
             <Toolbar>
+                {screenWidth > 800 &&
                 <IconButton edge='start' className={classes.iconButton} color='inherit' aria-label='LinkedInIcon' href='https://www.linkedin.com/in/andrew-pak-5a4580150/' target='_blank' rel='noopener noreferrer'>
                     <LinkedInIcon className={classes.icon}></LinkedInIcon>
                     <Typography variant='body1' className={classes.iconLabel}>
                         LinkedIn
                     </Typography>
-                </IconButton>
+                </IconButton>}
+                {screenWidth > 800 &&
                 <IconButton edge='start' className={classes.iconButton} color='inherit' aria-label='GitHubIcon' href='https://github.com/Dimuendo/' target='_blank' rel='noopener noreferrer'>
                     <GitHubIcon className={classes.icon}></GitHubIcon>
                     <Typography variant='body1' className={classes.iconLabel}>
                         GitHub
                     </Typography>
-                </IconButton>
+                </IconButton>}
+                {screenWidth > 800 &&
                 <IconButton edge='start' className={classes.iconButton} color='inherit' aria-label='resume' href={Resume} target='_blank' rel='noopener noreferrer'>
                     <InsertDriveFileIcon className={classes.icon}></InsertDriveFileIcon>
                     <Typography variant='body1' className={classes.iconLabel}>
                         Resume
                     </Typography>
-                </IconButton>
+                </IconButton>}
                 <IconButton edge='start' className={classes.iconButton} color='inherit' aria-label='EmailIcon' href='mailto:andrew.pak98@gmail.com' target='_blank' rel='noopener noreferrer'>
                     <MailOutlineIcon className={classes.icon}></MailOutlineIcon>
                     <Typography variant='body1' className={classes.iconLabel}>

@@ -9,13 +9,21 @@ import IconButton from '@material-ui/core/IconButton';
 import GitHubIcon from '@material-ui/icons/GitHub';
 
 const useStyles = makeStyles((theme) => ({
-    root: {
+    rootBig: {
         marginTop: theme.spacing(5),
         maxWidth: 640,
     },
-    media: {
+    mediaBig: {
         height: 360,
         width: 640,
+    },
+    rootSmall: {
+        marginTop: theme.spacing(5),
+        maxWidth: 384,
+    },
+    mediaSmall: {
+        height: 216,
+        width: 384,
     },
     cardContent: {
     }
@@ -28,10 +36,13 @@ function ProjectCard(props) {
     const websiteLink = props.websiteLink
     const media = props.media
 
+    const windowWidth = window.innerWidth
+    console.log(windowWidth)
+
     return (
-        <Card className={classes.root}>
+        <Card className={windowWidth > 800 ? classes.rootBig : classes.rootSmall}>
             <CardMedia
-                className={classes.media}
+                className={windowWidth > 800 ? classes.mediaBig : classes.mediaSmall}
                 image={media}
                 title='Project Image'
             />
