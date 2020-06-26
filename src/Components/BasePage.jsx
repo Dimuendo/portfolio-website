@@ -88,7 +88,7 @@ function BasePage() {
                             </Tooltip>
                         </div>
                         <div className={classes.navTitleContainer}>
-                            <Button onClick={() => executeScroll(introRef)} color="inherit">About Me</Button>
+                            {/* <Button onClick={() => executeScroll(introRef)} color="inherit">About Me</Button> */}
                             <Button onClick={() => executeScroll(projectsRef)} color="inherit">Projects</Button>
                             <Button onClick={() => executeScroll(infoBarRef)} color="inherit">Contact</Button>
                         </div>
