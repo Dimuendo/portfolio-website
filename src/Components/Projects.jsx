@@ -4,6 +4,7 @@ import ProjectCard from './ProjectCard'
 import Box from '@material-ui/core/Box';
 import { Typography } from '@material-ui/core';
 
+import chip8 from '../Static/chip8.jpg'
 import tftcomps from '../Static/tftcomps.jpg'
 import pathfindingVisualizer from '../Static/pathfinding_visualizer.jpg'
 import sortingVisualizer from '../Static/sorting_visualizer.jpg'
@@ -16,13 +17,6 @@ const useStyles = makeStyles((theme) => ({
         alignItems:'center',
         paddingBottom: theme.spacing(5),
     },
-    profilePic: {
-        marginTop: theme.spacing(5),
-        marginBottom: theme.spacing(5),
-        width: 300,
-        height: 300,
-        borderRadius: '50%',
-    },
     titleContainer: {
         paddingBottom: theme.spacing(2),
         paddingLeft: theme.spacing(3),
@@ -30,11 +24,9 @@ const useStyles = makeStyles((theme) => ({
         marginTop: theme.spacing(5),
         borderWidth: 'medium'
     },
-    title: {
-
-    },
 }));
 
+const chip8Message = 'This project is a CHIP-8 emulator written in C++.'
 const tftcompsMessage = 'This website aggregates the match data of the top 1000 players for the online video game Teamfight Tactics, it displays the most popular team compositions and statistics pertaining to items, units, and traits.'
 const pathfindingVisualizerMessage = 'This project allows the user to visualize different maze-generation and pathfinding algorithms.'
 const sortingVisualizerMessage = 'This project allows the user to visualize different sorting algorithms.'
@@ -45,10 +37,17 @@ function Projects(props) {
     return (
         <div className={classes.root} ref={props.projectsRef}>
             <Box borderBottom={1} className={classes.titleContainer}>
-            <Typography variant="h3" className={classes.title}>
-                Projects
-            </Typography>
+                <Typography variant="h3" className={classes.title}>
+                    Projects
+                </Typography>
             </Box>
+            <ProjectCard 
+                projectTitle='CHIP-8 Emulator' 
+                projectDescription={chip8Message}
+                websiteLink=''
+                gitHubLink='https://github.com/Dimuendo/chip8-emulator'
+                media={chip8}
+            />
             <ProjectCard 
                 projectTitle='tftcomps.lol' 
                 projectDescription={tftcompsMessage}
