@@ -15,9 +15,6 @@ import Projects from './Projects'
 import InfoBar from './InfoBar';
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-        display: 'flex',
-    },
     buttonContainer: {
         marginLeft: theme.spacing(3),
     },
@@ -29,8 +26,6 @@ const useStyles = makeStyles((theme) => ({
     },
     icon: {
         marginRight: theme.spacing(1)
-    },
-    title: {
     },
 }));
 
@@ -55,8 +50,8 @@ function BasePage() {
 
     return (
         <ThemeProvider theme={theme}>
-            <div className={classes.root}>
-                <AppBar position='static'>
+            <div>
+                <AppBar position='fixed'>
                     <Toolbar>
                         <Typography variant="h5" className={classes.title}>
                             Andrew Pak
@@ -94,6 +89,7 @@ function BasePage() {
                         </div>
                     </Toolbar>
                 </AppBar>
+                <Toolbar />
             </div>
             <div ref={introRef}>
                 <Intro></Intro>
