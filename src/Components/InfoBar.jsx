@@ -7,8 +7,9 @@ import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import IconButton from '@material-ui/core/IconButton';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 import GitHubIcon from '@material-ui/icons/GitHub';
-import Resume from '../Static/Andrew_Pak_CV.pdf'
+import Resume from '../Static/Andrew_Pak_Resume.pdf'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -24,26 +25,26 @@ const useStyles = makeStyles((theme) => ({
 
 function InfoBar(props) {
     const classes = useStyles()
-    const screenWidth = window.innerWidth
+    const matches = useMediaQuery('(min-width:650px)');
 
     return (
         <AppBar position='static' ref={props.infoBarRef} className={classes.root}>
             <Toolbar>
-                {screenWidth > 800 &&
+                {matches &&
                 <IconButton edge='start' className={classes.iconButton} color='inherit' aria-label='LinkedInIcon' href='https://www.linkedin.com/in/andrew-pak-5a4580150/' target='_blank' rel='noopener noreferrer'>
                     <LinkedInIcon className={classes.icon}></LinkedInIcon>
                     <Typography variant='body1' className={classes.iconLabel}>
                         LinkedIn
                     </Typography>
                 </IconButton>}
-                {screenWidth > 800 &&
+                {matches &&
                 <IconButton edge='start' className={classes.iconButton} color='inherit' aria-label='GitHubIcon' href='https://github.com/Dimuendo/' target='_blank' rel='noopener noreferrer'>
                     <GitHubIcon className={classes.icon}></GitHubIcon>
                     <Typography variant='body1' className={classes.iconLabel}>
                         GitHub
                     </Typography>
                 </IconButton>}
-                {screenWidth > 800 &&
+                {matches &&
                 <IconButton edge='start' className={classes.iconButton} color='inherit' aria-label='resume' href={Resume} target='_blank' rel='noopener noreferrer'>
                     <InsertDriveFileIcon className={classes.icon}></InsertDriveFileIcon>
                     <Typography variant='body1' className={classes.iconLabel}>

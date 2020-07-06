@@ -1,4 +1,5 @@
 import React from 'react';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -36,13 +37,12 @@ function ProjectCard(props) {
     const websiteLink = props.websiteLink
     const media = props.media
 
-    const windowWidth = window.innerWidth
-    console.log(windowWidth)
+    const matches = useMediaQuery('(min-width:700px)');
 
     return (
-        <Card className={windowWidth > 800 ? classes.rootBig : classes.rootSmall}>
+        <Card className={matches ? classes.rootBig : classes.rootSmall}>
             <CardMedia
-                className={windowWidth > 800 ? classes.mediaBig : classes.mediaSmall}
+                className={matches ? classes.mediaBig : classes.mediaSmall}
                 image={media}
                 title='Project Image'
             />

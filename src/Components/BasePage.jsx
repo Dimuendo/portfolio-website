@@ -9,7 +9,7 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
 import Tooltip from '@material-ui/core/Tooltip';
-import Resume from '../Static/Andrew_Pak_CV.pdf'
+import Resume from '../Static/Andrew_Pak_Resume.pdf'
 import Intro from './Intro'
 import Projects from './Projects'
 import InfoBar from './InfoBar';
