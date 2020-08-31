@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import ProjectCard from './ProjectCard'
 import Box from '@material-ui/core/Box';
-import { Typography, Divider, Grid, Paper, Card, Container } from '@material-ui/core';
+import { Typography, Divider, Grid, Container } from '@material-ui/core';
 
 import chip8 from '../Static/chip8.jpg'
 import tftcomps from '../Static/tftcomps.jpg'
