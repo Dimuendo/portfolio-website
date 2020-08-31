@@ -6,7 +6,8 @@ import Box from '@material-ui/core/Box';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        backgroundColor: '#26c6da',
+        // backgroundColor: '#26c6da',
+        background: 'linear-gradient(45deg, #3EADCF 0%, #ABE9CD 74%)',
         display: 'flex',
         flexDirection: 'column',
         alignItems:'center',

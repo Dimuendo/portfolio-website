@@ -4,6 +4,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import ButtonGroup from '@material-ui/core/ButtonGroup';
 import IconButton from '@material-ui/core/IconButton';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
@@ -22,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: 'auto'
     },
     iconButton: {
-        marginRight: theme.spacing(3)
+        marginRight: theme.spacing(1)
     },
     icon: {
         marginRight: theme.spacing(1)
@@ -35,7 +36,7 @@ const theme = createMuiTheme({
           main: '#263238',
         },
         secondary: {
-            main: '#263238',
+            main: '#020039',
         },
     },
 });
@@ -56,7 +57,7 @@ function BasePage() {
                         <Typography variant="h5" className={classes.title}>
                             Andrew Pak
                         </Typography>
-                        <div className={classes.buttonContainer}>
+                        <ButtonGroup className={classes.buttonContainer} variant="text" color='primary'>
                             <Tooltip title='LinkedIn'>
                                 <IconButton edge='start' className={classes.iconButton} color='inherit' aria-label='LinkedInIcon' href='https://www.linkedin.com/in/andrew-pak-5a4580150/' target='_blank' rel='noopener noreferrer'>
                                     <LinkedInIcon className={classes.icon}></LinkedInIcon>
@@ -81,7 +82,7 @@ function BasePage() {
                                     </Typography>
                                 </IconButton>
                             </Tooltip>
-                        </div>
+                        </ButtonGroup>
                         <div className={classes.navTitleContainer}>
                             {/* <Button onClick={() => executeScroll(introRef)} color="inherit">About Me</Button> */}
                             <Button onClick={() => executeScroll(projectsRef)} color="inherit">Projects</Button>

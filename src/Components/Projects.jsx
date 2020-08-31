@@ -11,7 +11,7 @@ import sortingVisualizer from '../Static/sorting_visualizer.jpg'
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        backgroundColor: '#E1E2E1',
+        background: 'linear-gradient(45deg, #D7E1EC 0%, #FFFFFF 74%);',
         display: 'flex',
         flexDirection: 'column',
         alignItems:'center',
