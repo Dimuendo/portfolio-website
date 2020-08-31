@@ -6,28 +6,24 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { CardContent, CardActions } from '@material-ui/core';
-import IconButton from '@material-ui/core/IconButton';
 import GitHubIcon from '@material-ui/icons/GitHub';
+import LanguageIcon from '@material-ui/icons/Language';
 
 const useStyles = makeStyles((theme) => ({
-    rootBig: {
-        marginTop: theme.spacing(5),
-        maxWidth: 640,
+    root: {
     },
     mediaBig: {
-        height: 360,
-        width: 640,
-    },
-    rootSmall: {
-        marginTop: theme.spacing(5),
-        maxWidth: 256,
-    },
-    mediaSmall: {
-        height: 144,
-        width: 256,
+        height: 0,
+        paddingTop: '56.25%',
     },
     cardContent: {
-    }
+    },
+    icon: {
+        marginRight: theme.spacing(1),
+    },
+    iconLabel: {
+        color: 'black',
+    },
 }));
 
 function ProjectCard(props) {
@@ -37,32 +33,38 @@ function ProjectCard(props) {
     const websiteLink = props.websiteLink
     const media = props.media
 
-    const matches = useMediaQuery('(min-width:700px)');
+    // const matches = useMediaQuery('(min-width:700px)');
 
     return (
-        <Card className={matches ? classes.rootBig : classes.rootSmall}>
+        <Card className={classes.root}>
             <CardMedia
-                className={matches ? classes.mediaBig : classes.mediaSmall}
+                className={classes.mediaBig}
                 image={media}
                 title='Project Image'
             />
             <CardContent className={classes.cardContent}>
-                <Typography align='left'  gutterBottom variant='h5' component='h2'>
+                <Typography align='left' gutterBottom variant='h5' component='h2' color='textSecondary'>
                     {projectTitle}
                 </Typography>
-                <Typography align='left' variant='body2' component='p'>
+                <Typography align='left' variant='body2' component='p' color='textSecondary'>
                     {projectDescription}
                 </Typography>
             </CardContent>
             <CardActions className={classes.cardActions}>
                 {websiteLink !== '' &&
-                <Button target='_blank' rel='noopener noreferrer' size='small' color='primary' href={websiteLink}>
-                    Go to Website
+                <Button className={classes.gitHubButton} target='_blank' rel='noopener noreferrer' size='small' color='secondary' href={websiteLink}>
+                    <LanguageIcon className={classes.icon}></LanguageIcon>
+                    <Typography variant='body1' className={classes.iconLabel} color='secondary'>
+                        Go to Website
+                    </Typography>
                 </Button>
                 }
-                <IconButton edge='start' className={classes.gitHubButton} color='inherit' aria-label='GitHubIcon' href={props.gitHubLink} target='_blank' rel='noopener noreferrer'>
-                    <GitHubIcon></GitHubIcon>
-                </IconButton>
+                <Button edge='start' className={classes.gitHubButton} color='secondary' aria-label='GitHubIcon' href={props.gitHubLink} target='_blank' rel='noopener noreferrer'>
+                    <GitHubIcon className={classes.icon}></GitHubIcon>
+                    <Typography variant='body1' className={classes.iconLabel} color='secondary'>
+                        GitHub
+                    </Typography>
+                </Button>
             </CardActions>
         </Card>
     );

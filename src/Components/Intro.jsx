@@ -1,30 +1,28 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, createMuiTheme } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import profilePic from '../Static/profile_pic.jpg'
 import Box from '@material-ui/core/Box';
+import { Divider, ThemeProvider } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        // backgroundColor: '#26c6da',
         background: 'linear-gradient(45deg, #3EADCF 0%, #ABE9CD 74%)',
         display: 'flex',
         flexDirection: 'column',
-        alignItems:'center',
+        alignItems: 'center',
         paddingBottom: theme.spacing(5),
+        height: '90vh',
+    },nameContainer: {
+        marginTop: theme.spacing(25),
     },
-    profilePic: {
-        marginTop: theme.spacing(5),
-        marginBottom: theme.spacing(5),
-        width: 300,
-        height: 300,
-        borderRadius: '50%',
-    },
-    nameContainer: {
-        paddingBottom: theme.spacing(2),
-        marginBottom: theme.spacing(2),
-        borderWidth: 'thick'
-    },
+    divider: {
+        width: '20%',
+        background: theme.palette.secondary.main,
+        borderWidth: '1.5px',
+        borderStyle: 'solid',
+        borderColor: theme.palette.secondary.main,
+        marginBottom: theme.spacing(2)
+    }
 }));
 
 function Intro(props) {
@@ -32,14 +30,18 @@ function Intro(props) {
 
     return (
         <div className={classes.root} ref={props.introRef}>
-            <img src={profilePic} className={classes.profilePic} alt="logo" />
-            <Box borderBottom={1} className={classes.nameContainer}>
-                <Typography variant="h3" className={classes.name}>
-                    Andrew Pak
+            <Box className={classes.nameContainer}>
+                <Typography variant="h2" className={classes.name}>
+                    <Box fontWeight='fontWeightBold'>
+                        ANDREW PAK
+                    </Box>
                 </Typography>
             </Box>
-            <Typography variant="h6" className={classes.name}>
-                Computer Science and Business Double Degree
+            <Divider className={classes.divider} color='secondary'/>
+            <Typography variant="h5" className={classes.name}>
+                <Box fontWeight='fontWeightBold'>
+                    Computer Science and Business Double Degree
+                </Box>
             </Typography>
         </div>
     );
