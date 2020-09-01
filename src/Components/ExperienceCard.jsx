@@ -7,6 +7,7 @@ import { Box, Divider, Grid, CardContent } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
     root: {
         maxWidth: '700px',
+        width: '50%',
         margin: '10px 10px 10px 10px'
     },
     divider: {

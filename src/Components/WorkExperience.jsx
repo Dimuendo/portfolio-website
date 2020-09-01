@@ -29,7 +29,8 @@ const useStyles = makeStyles((theme) => ({
 
 // ClearBanc
 const cbRoleDescriptions = [
-    'Incoming Data Scientist at Clearbanc. Expected duties include conducting reproductible research to build data products and working with a team of data scientsts to help transform complex data into meaning insights.',
+    'Conducting reproductible research to build data products',
+    'Working with a team of data scientsts to help transform complex data into meaning insights',
 ]
 
 // Scotiabank

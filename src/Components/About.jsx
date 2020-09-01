@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
 const techAboutMessageOne = "I am a fifth year student who is currently enrolled in the Computer Science and Business Administration double degree program at the University of Waterloo and Wilfrid Laurier University."
 const techAboutMessageTwo = "I have currently completed two co-op terms where I worked as a data scientist at Scotiabank and a software developer at Motoinsight. My third co-op term is currently in progress where I am working as a data scientist at Clearbanc."
 const personalAboutMessageOne = "When I'm not studying or creating projects, I fill my time by playing video games and hanging out with friends."
-const personalAboutMessageTwo = "I recently got so invested into a game called Teamfight Tactics, a strategy game created by Riot Games, that I managed to rank within the top 300 players in North America at my peak (approximately 1,000,000 total players). This was also a big reason why I created the tftcomps.lol project which you can check out below."
+const personalAboutMessageTwo = "I recently got invested into a game called Teamfight Tactics, a strategy game created by Riot Games, and managed to rank within the top 300 players in North America (approximately 1,000,000 total players)."
 
 function About(props) {
     const classes = useStyles()
