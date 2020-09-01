@@ -2,7 +2,8 @@ import React from 'react'
 import profilePic from '../Static/profile_pic.jpg'
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
-import { Divider, Typography, Grid, Container } from '@material-ui/core';
+import { Divider, Typography, Grid, Container, CardMedia, Card, CardContent } from '@material-ui/core';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -17,8 +18,6 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: theme.spacing(1),
     },
     profilePic: {
-        width: 300,
-        height: 300,
     },
     underline: {
         width: '8%',
@@ -31,12 +30,17 @@ const useStyles = makeStyles((theme) => ({
     aboutContainer: {
         marginBottom: theme.spacing(10),
     },
+    aboutMessageContainer: {
+    },
     aboutMessageTitle: {
         marginBottom: theme.spacing(1),
     },
     aboutMessage: {
-        width: theme.spacing(50),
         marginBottom: theme.spacing(2),
+    },
+    mediaBig: {
+        height: 0,
+        paddingTop: '100%',
     },
 }));
 
@@ -47,6 +51,7 @@ const personalAboutMessageTwo = "I recently got so invested into a game called T
 
 function About(props) {
     const classes = useStyles()
+    const matches = useMediaQuery('(min-width:650px)');
 
     return (
         <div className={classes.root} ref={props.aboutRef}>
@@ -56,18 +61,30 @@ function About(props) {
                 </Box>
             </Typography>
             <Divider className={classes.underline} color='secondary'/>
-            <Container >
+            <Container maxWidth='med'>
                 <Grid
                     className={classes.aboutContainer}
                     container
                     direction='row'
-                    justify='center'
+                    justify='center' 
                     spacing={3}
                 >
-                    <Grid item>
-                        <img src={profilePic} className={classes.profilePic} alt='logo' />
+                    <Grid 
+                        item
+                        xs={matches ? 2 : 12}
+                    >
+                        <Card>
+                        <CardMedia
+                            className={classes.mediaBig}
+                            image={profilePic}
+                            title='Project Image'
+                        />
+                        </Card>
                     </Grid>
-                    <Grid item>
+                    <Grid 
+                        item
+                        xs={matches ? 2 : -1}
+                    >
                         <Box
                             className={classes.aboutMessageContainer}
                             display='flex'
@@ -86,7 +103,10 @@ function About(props) {
                             </Typography>
                         </Box>
                     </Grid>
-                    <Grid item>
+                    <Grid 
+                        item
+                        xs={matches ? 2 : -1}
+                    >
                         <Box
                             className={classes.aboutMessageContainer}
                             display='flex'
