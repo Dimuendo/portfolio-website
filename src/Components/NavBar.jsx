@@ -12,6 +12,7 @@ import Tooltip from '@material-ui/core/Tooltip';
 import Resume from '../Static/Andrew_Pak_Resume.pdf'
 import { makeStyles } from '@material-ui/core/styles';
 import { Box } from '@material-ui/core';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 const useStyles = makeStyles((theme) => ({
     buttonContainer: {
@@ -33,6 +34,8 @@ function NavBar(props) {
     const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop - props.appBarHeight)
     const executeScroll = (ref) => scrollToRef(ref)
 
+    const matches = useMediaQuery('(min-width:700px)');
+
     return (
         <Box>
             <AppBar position='fixed'>
@@ -52,9 +55,11 @@ function NavBar(props) {
                                 rel='noopener noreferrer'
                             >
                                 <LinkedInIcon className={classes.icon}></LinkedInIcon>
-                                <Typography variant='body1' className={classes.iconLabel} color='textPrimary'>
-                                    LinkedIn
-                                </Typography>
+                                {matches &&
+                                    <Typography variant='body1' className={classes.iconLabel} color='textPrimary'>
+                                        LinkedIn
+                                    </Typography>
+                                }           
                             </IconButton>
                         </Tooltip>
                         <Tooltip title='GitHub'>
@@ -68,9 +73,11 @@ function NavBar(props) {
                                 rel='noopener noreferrer'
                             >
                                 <GitHubIcon className={classes.icon}></GitHubIcon>
-                                <Typography variant='body1' className={classes.iconLabel} color='textPrimary'>
-                                    GitHub
-                                </Typography>
+                                {matches &&
+                                    <Typography variant='body1' className={classes.iconLabel} color='textPrimary'>
+                                        GitHub
+                                    </Typography>
+                                }
                             </IconButton>
                         </Tooltip>
                         <Tooltip title='Resume'>
@@ -84,41 +91,54 @@ function NavBar(props) {
                                 rel='noopener noreferrer'
                             >
                                 <InsertDriveFileIcon className={classes.icon}></InsertDriveFileIcon>
-                                <Typography variant='body1' className={classes.iconLabel} color='textPrimary'>
-                                    Resume
-                                </Typography>
+                                {matches &&
+                                    <Typography variant='body1' className={classes.iconLabel} color='textPrimary'>
+                                        Resume
+                                    </Typography>
+                                }
                             </IconButton>
                         </Tooltip>
                     </ButtonGroup>
-                    <ButtonGroup className={classes.navButtonContainer} variant='text' color='secondary'>
-                        <Button
-                            className={classes.navButton} 
-                            onClick={() => executeScroll(props.aboutRef)} 
-                            color="secondary"
-                        >
-                            <Typography variant='body2' className={classes.iconLabel} color='textPrimary'>
-                                About
-                            </Typography>
-                        </Button>
-                        <Button
-                            className={classes.navButton} 
-                            onClick={() => executeScroll(props.projectsRef)} 
-                            color="secondary"
-                        >
-                            <Typography variant='body2' className={classes.iconLabel} color='textPrimary'>
-                                Projects
-                            </Typography>
-                        </Button>
-                        <Button
-                            className={classes.navButton} 
-                            onClick={() => executeScroll(props.infoBarRef)} 
-                            color="secondary"
-                        >
-                            <Typography variant='body2' className={classes.iconLabel} color='textPrimary'>
-                                Contact
-                            </Typography>
-                        </Button>
-                    </ButtonGroup>
+                    {matches &&
+                        <ButtonGroup className={classes.navButtonContainer} variant='text' color='secondary'>
+                            <Button
+                                className={classes.navButton} 
+                                onClick={() => executeScroll(props.aboutRef)} 
+                                color="secondary"
+                            >
+                                <Typography variant='body2' className={classes.iconLabel} color='textPrimary'>
+                                    About
+                                </Typography>
+                            </Button>
+                            <Button
+                                className={classes.navButton} 
+                                onClick={() => executeScroll(props.workExperienceRef)} 
+                                color="secondary"
+                            >
+                                <Typography variant='body2' className={classes.iconLabel} color='textPrimary'>
+                                    Experience
+                                </Typography>
+                            </Button>
+                            <Button
+                                className={classes.navButton} 
+                                onClick={() => executeScroll(props.projectsRef)} 
+                                color="secondary"
+                            >
+                                <Typography variant='body2' className={classes.iconLabel} color='textPrimary'>
+                                    Projects
+                                </Typography>
+                            </Button>
+                            <Button
+                                className={classes.navButton} 
+                                onClick={() => executeScroll(props.infoBarRef)} 
+                                color="secondary"
+                            >
+                                <Typography variant='body2' className={classes.iconLabel} color='textPrimary'>
+                                    Contact
+                                </Typography>
+                            </Button>
+                        </ButtonGroup>
+                    }
                 </Toolbar>
             </AppBar>
             <Toolbar />

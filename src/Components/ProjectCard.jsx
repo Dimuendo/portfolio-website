@@ -32,8 +32,6 @@ function ProjectCard(props) {
     const websiteLink = props.websiteLink
     const media = props.media
 
-    // const matches = useMediaQuery('(min-width:700px)');
-
     return (
         <Card className={classes.root}>
             <CardMedia

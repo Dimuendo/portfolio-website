@@ -4,6 +4,7 @@ import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import NavBar from './NavBar'
 import Intro from './Intro'
 import About from './About'
+import WorkExperience from './WorkExperience'
 import Projects from './Projects'
 import InfoBar from './InfoBar';
 
@@ -27,6 +28,7 @@ const theme = createMuiTheme({
 function BasePage() {
     const introRef = createRef()
     const aboutRef = createRef()
+    const workExperienceRef = createRef()
     const projectsRef = createRef()
     const infoBarRef = createRef()
 
@@ -36,6 +38,7 @@ function BasePage() {
                 appBarHeight={APPBAR_HEIGHT}
                 introRef={introRef}
                 aboutRef={aboutRef}
+                workExperienceRef={workExperienceRef}
                 projectsRef={projectsRef}
                 infoBarRef={infoBarRef}
             />
@@ -44,6 +47,9 @@ function BasePage() {
             </div>
             <div ref={aboutRef}>
                 <About></About>
+            </div>
+            <div ref={workExperienceRef}>
+                <WorkExperience></WorkExperience>
             </div>
             <div ref={projectsRef}>
                 <Projects></Projects>

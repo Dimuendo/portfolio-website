@@ -11,7 +11,7 @@ import sortingVisualizer from '../Static/sorting_visualizer.jpg'
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        backgroundColor: '#F5F5F6',
+        backgroundColor: '#E1E2E1',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -57,7 +57,7 @@ function Projects(props) {
                 </Box>
             </Typography>
             <Divider className={classes.underline} color='secondary'/>
-            <Container maxWidth='fixed'>
+            <Container maxWidth='lg'>
                 <Grid 
                     container
                     direction='row'

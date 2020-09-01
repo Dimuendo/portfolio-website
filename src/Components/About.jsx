@@ -2,7 +2,7 @@ import React from 'react'
 import profilePic from '../Static/profile_pic.jpg'
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
-import { Divider, Typography } from '@material-ui/core';
+import { Divider, Typography, Grid, Container } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -19,8 +19,6 @@ const useStyles = makeStyles((theme) => ({
     profilePic: {
         width: 300,
         height: 300,
-        marginRight: theme.spacing(5),
-        // borderRadius: '80%',
     },
     underline: {
         width: '8%',
@@ -40,16 +38,6 @@ const useStyles = makeStyles((theme) => ({
         width: theme.spacing(50),
         marginBottom: theme.spacing(2),
     },
-    aboutDivider: {
-        marginRight: theme.spacing(5),
-        marginLeft: theme.spacing(5),
-        height: theme.spacing(30),
-        background: theme.palette.secondary.light,
-        borderWidth: '1px',
-        borderStyle: 'solid',
-        borderColor: theme.palette.secondary.light,
-        alignSelf: 'center',
-    },
 }));
 
 const techAboutMessageOne = "I am a fifth year student who is currently enrolled in the Computer Science and Business Administration double degree program at the University of Waterloo and Wilfrid Laurier University."
@@ -68,51 +56,57 @@ function About(props) {
                 </Box>
             </Typography>
             <Divider className={classes.underline} color='secondary'/>
-            <Box
-                className={classes.aboutContainer}
-                display='flex' 
-                justifyContent='center'
-                flexDirection='row'
-            >
-                <img src={profilePic} className={classes.profilePic} alt='logo' />
-                <Box
-                    className={classes.aboutMessageContainer}
-                    display='flex'
-                    flexDirection='column'
-                >   
-                    <Typography align='left' variant='h6'>
-                        <Box fontWeight='fontWeightBold' className={classes.aboutMessageTitle}>
-                            Hi, my name is Andrew Pak!
+            <Container >
+                <Grid
+                    className={classes.aboutContainer}
+                    container
+                    direction='row'
+                    justify='center'
+                    spacing={3}
+                >
+                    <Grid item>
+                        <img src={profilePic} className={classes.profilePic} alt='logo' />
+                    </Grid>
+                    <Grid item>
+                        <Box
+                            className={classes.aboutMessageContainer}
+                            display='flex'
+                            flexDirection='column'
+                        >   
+                            <Typography align='left' variant='h6'>
+                                <Box fontWeight='fontWeightBold' className={classes.aboutMessageTitle}>
+                                    Hi, my name is Andrew Pak!
+                                </Box>
+                            </Typography>
+                            <Typography align='left' variant='body2' className={classes.aboutMessage}>
+                                { techAboutMessageOne }
+                            </Typography>
+                            <Typography align='left' variant='body2' className={classes.aboutMessage}>
+                                { techAboutMessageTwo }
+                            </Typography>
                         </Box>
-                    </Typography>
-                    <Typography align='left' variant='body2' className={classes.aboutMessage}>
-                        { techAboutMessageOne }
-                    </Typography>
-                    <Typography align='left' variant='body2' className={classes.aboutMessage}>
-                        { techAboutMessageTwo }
-                    </Typography>
-                </Box>
-
-                <Divider orientation="vertical" className={classes.aboutDivider} flexItem />
-
-                <Box
-                    className={classes.aboutMessageContainer}
-                    display='flex'
-                    flexDirection='column'
-                >   
-                    <Typography align='left' variant='h6'>
-                        <Box fontWeight='fontWeightBold' className={classes.aboutMessageTitle}>
-                            My Personal Interests
+                    </Grid>
+                    <Grid item>
+                        <Box
+                            className={classes.aboutMessageContainer}
+                            display='flex'
+                            flexDirection='column'
+                        >   
+                            <Typography align='left' variant='h6'>
+                                <Box fontWeight='fontWeightBold' className={classes.aboutMessageTitle}>
+                                    My Personal Interests
+                                </Box>
+                            </Typography>
+                            <Typography align='left' variant='body2' className={classes.aboutMessage}>
+                                { personalAboutMessageOne }
+                            </Typography>
+                            <Typography align='left' variant='body2' className={classes.aboutMessage}>
+                                { personalAboutMessageTwo }
+                            </Typography>
                         </Box>
-                    </Typography>
-                    <Typography align='left' variant='body2' className={classes.aboutMessage}>
-                        { personalAboutMessageOne }
-                    </Typography>
-                    <Typography align='left' variant='body2' className={classes.aboutMessage}>
-                        { personalAboutMessageTwo }
-                    </Typography>
-                </Box>
-            </Box>
+                    </Grid>
+                </Grid>
+            </Container>
         </div>
     )
 }
