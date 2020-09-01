@@ -7,7 +7,7 @@ import { Typography, Divider, Grid, Container } from '@material-ui/core';
 import chip8 from '../Static/chip8.jpg'
 import tftcomps from '../Static/tftcomps.jpg'
 import pathfindingVisualizer from '../Static/pathfinding_visualizer.jpg'
-import sortingVisualizer from '../Static/sorting_visualizer.jpg'
+import sortingStepper from '../Static/sorting_stepper.jpg'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
 const chip8Message = 'This project is a CHIP-8 emulator written fully in C++. This emulator supports 35 different opcodes, 16 registers, 16 level-deep stack, 2 timers, 16 input keys, and 64x32 pixel display.'
 const tftcompsMessage = 'This website aggregates the match data of the top 1000 players for the online video game Teamfight Tactics, it displays the most popular team compositions and statistics pertaining to items, units, and traits.'
 const pathfindingVisualizerMessage = 'This project allows the user to visualize different maze-generation and pathfinding algorithms. Supports Dijkstra\'s A* search, breadth first search, and depth first search.'
-const sortingVisualizerMessage = 'This project allows the user to visualize different sorting algorithms. Supports quick sort, bubble sort, merge sort, selection sort and variable animation speeds and array sizes.'
+const sortingStepperMessage = 'This project allows the user to step through and visualize different sorting algorithms. This is a work in progress and as such only supports bubble sort and selection sort currently. Both merge sort and quick sort will be supported in the future.'
 
 function Projects(props) {
     const classes = useStyles()
@@ -64,6 +64,15 @@ function Projects(props) {
                     justify='center'
                     spacing={3}
                 >
+                    <Grid item xs={12} sm={6}>
+                        <ProjectCard 
+                            projectTitle='Sorting Stepper (WIP)' 
+                            projectDescription={sortingStepperMessage}
+                            websiteLink='https://dimuendo.github.io/sorting-stepper/'
+                            gitHubLink='https://github.com/Dimuendo/sorting-stepper'
+                            media={sortingStepper}
+                        />
+                    </Grid>
                     <Grid item xs={12} sm={6}>
                         <ProjectCard 
                             projectTitle='tftcomps.lol' 
@@ -89,15 +98,6 @@ function Projects(props) {
                             websiteLink='https://dimuendo.github.io/pathfinding-visualizer/'
                             gitHubLink='https://github.com/Dimuendo/pathfinding-visualizer'
                             media={pathfindingVisualizer}
-                        />
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
-                        <ProjectCard 
-                            projectTitle='Sorting Visualizer' 
-                            projectDescription={sortingVisualizerMessage}
-                            websiteLink='https://dimuendo.github.io/sorting-visualizer/'
-                            gitHubLink='https://github.com/Dimuendo/sorting-visualizer'
-                            media={sortingVisualizer}
                         />
                     </Grid>
                 </Grid>
