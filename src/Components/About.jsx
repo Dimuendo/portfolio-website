@@ -2,7 +2,7 @@ import React from 'react'
 import profilePic from '../Static/profile_pic.jpg'
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
-import { Divider, Typography, Grid, Container, CardMedia, Card, CardContent } from '@material-ui/core';
+import { Divider, Typography, Grid, Container, CardMedia, Card } from '@material-ui/core';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 const useStyles = makeStyles((theme) => ({
