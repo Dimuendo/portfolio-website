@@ -51,7 +51,7 @@ const personalAboutMessageTwo = "I recently got invested into a game called Team
 
 function About(props) {
     const classes = useStyles()
-    const matches = useMediaQuery('(min-width:650px)');
+    const matches = useMediaQuery('(min-width:700px)');
 
     return (
         <div className={classes.root} ref={props.aboutRef}>

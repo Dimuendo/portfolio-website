@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
 // ClearBanc
 const cbRoleDescriptions = [
     'Conducting reproductible research to build data products',
-    'Working with a team of data scientsts to help transform complex data into meaning insights',
+    'Working with a team of data scientsts to help transform complex data into meaningful insights',
 ]
 
 // Scotiabank
