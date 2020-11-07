@@ -29,8 +29,8 @@ const useStyles = makeStyles((theme) => ({
 
 // ClearBanc
 const cbRoleDescriptions = [
-    'Conducting reproducible research to build data products',
-    'Working with a team of data scientists to help transform complex data into meaningful insights',
+    'Created a model using XGBoost that predicted revenues for a given business. Used tsfresh to extract features from a revenue time series and then created a pipeline that performed recursive feature elimination to select the most relevant features',
+    'Created a dashboard using SQL and python that monitored the health and quality of core data feeds. Dashboard included charts that tracked the standard deviation of ad spend, a time series of connected accounts, days since last pull, etc',
 ]
 
 // Scotiabank
